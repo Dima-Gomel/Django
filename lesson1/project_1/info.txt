@@ -1,0 +1,9 @@
+django-admin startproject project_1
+python .\manage.py startapp app_1
+python .\manage.py runserver 8000
+
+Дописываем свое приложение в файл settins.py в список INSTALLED_APPS
+python .\manage.py makemigrations app_1
+python .\manage.py migrate
+
+python .\manage.py createsuperuser
