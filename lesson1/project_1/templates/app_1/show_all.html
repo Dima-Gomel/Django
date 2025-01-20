@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 align="center">Вся наша мебель</h1>
+{% if mebels %}
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th class="text-center" scope="col">Цена</th>
+                <th class="text-center" scope="col">Описание</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for mebel in mebels %}
+            <tr>
+                <th class="text-center" scope="row">{{mebel.price}}</th>
+                <td class="text-center"><a href="{{mebel.link}}">{{mebel.description}}</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+{% else %}
+<h2>К сожалению мебели еще нету</h2>
+
+{% endif %}
+
+{% endblock %}
